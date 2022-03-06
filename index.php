@@ -2,3 +2,4 @@
 <style>
 <?php include 'star destroyer/css/style-main.css'; ?>
 </style>
+<?php include 'star destroyer/img/terrain.png'; ?>
