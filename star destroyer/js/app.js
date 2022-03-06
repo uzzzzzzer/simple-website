@@ -11,7 +11,7 @@ var requestAnimFrame = (function(){
             window.setTimeout(callback, 1000 / 60);
         };
 })();
-
+var stats = JSON.parse(localStorage.getItem('stats'));
 // Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
@@ -119,7 +119,7 @@ var bull=5;
 var spawned=0;
 var lastBullet = Date.now();
 var vfx=[];
-var stats = JSON.parse(localStorage.getItem('stats'));
+
 var compositions=["tt","ff","d","fttf","ddd","tttttttttt","ftftf","ffffffffff","dttd","dfdfd","ttttttttttttttt","g","fdgdf","ttttttfgft","ggggg","tgtgt","gdg","fgfgf","ttdttgg","ffsff"];
 var sp=compositions[stats.selected-1];
 var to_spawn=sp.length;
