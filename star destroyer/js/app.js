@@ -85,7 +85,7 @@ var compass = [{
     sprite: new Sprite('img/compass.png', [0, 0], [300, 300], 16, [0],180)
 }];
 var stats = JSON.parse(localStorage.getItem('stats'));
-if(stats.selected<10){
+if(stats.selected==10){
 var holes = [{
 	object_type:"env",
     pos: [5000, 1000],
@@ -639,62 +639,6 @@ function gameWin() {
 
 // Reset game to original state
 function reset() {
-	var player = {
-		health:5,
-		mhealth:5,
-		object_type:"unit",
-	    pos: [0, 0],
-	    sprite: new Sprite('img/player_1.png', [0, 0], [122, 100], 16, [0],180)
-	};
-	var terrain = [{
-	    pos: [-800, -600],
-		object_type:"env",
-	    sprite: new Sprite('img/terrain.png', [0, 0], [5000, 3000], 16, [0],180)
-	}];
-	var compass = [{
-		object_type:"env",
-	    pos: [5, 5],
-	    sprite: new Sprite('img/compass.png', [0, 0], [300, 300], 16, [0],180)
-	}];
-	var stats = JSON.parse(localStorage.getItem('stats'));
-	if(stats.selected<10){
-	var holes = [{
-		object_type:"env",
-	    pos: [5000, 1000],
-		force:2500,
-	    sprite: new Sprite('img/blackhole.png', [0, 0], [800, 716], 16, [0],180)
-	}];
-	}
-	else{
-	var holes = [];
-	}
-	var compass_markers = [];
-	var bullets = [];
-	var enemies = [];
-	var explosions = [];
-
-	var lastFire = Date.now();
-	var lastChange = Date.now();
-	var gameTime = 0;
-	var isGameOver;
-	var terrainPattern;
-
-	var score = 0;
-	var scoreEl = document.getElementById('score');
-
-	// Speed in pixels per second
-	var playerSpeed = 200;
-	var bulletSpeed = 1000;
-	var enemySpeed = 100;
-	var on=0;
-	var bull=5;
-	var spawned=0;
-	var lastBullet = Date.now();
-	var vfx=[];
-	var stats = JSON.parse(localStorage.getItem('stats'));
-	var compositions=["tt","ff","d","fttf","ddd","tttttttttt","ftftf","ffffffffff","dttd","dfdfd","ttttttttttttttt","g","fdgdf","ttttttfgft","ggggg","tgtgt","gdg","fgfgf","ttdttgg","ffsff"];
-	var sp=compositions[stats.selected-1];
-	var to_spawn=sp.length;
     document.getElementById('game-over').style.display = 'none';
     document.getElementById('game-over-overlay').style.display = 'none';
     isGameOver = false;
@@ -711,4 +655,42 @@ function reset() {
 	    pos: [0, 0],
 	    sprite: new Sprite('img/player_1.png', [0, 0], [122, 100], 16, [0],180)
 	};
+if(stats.selected==10){
+var holes = [{
+	object_type:"env",
+    pos: [5000, 1000],
+	force:2500,
+    sprite: new Sprite('img/blackhole.png', [0, 0], [800, 716], 16, [0],180)
+}];
+}
+else{
+var holes = [];
+}
+var compass_markers = [];
+var bullets = [];
+var enemies = [];
+var explosions = [];
+
+var lastFire = Date.now();
+var lastChange = Date.now();
+var gameTime = 0;
+var isGameOver;
+var terrainPattern;
+
+var score = 0;
+var scoreEl = document.getElementById('score');
+
+// Speed in pixels per second
+var playerSpeed = 200;
+var bulletSpeed = 1000;
+var enemySpeed = 100;
+var on=0;
+var bull=5;
+var spawned=0;
+var lastBullet = Date.now();
+var vfx=[];
+var stats = JSON.parse(localStorage.getItem('stats'));
+var compositions=["tt","ff","d","fttf","ddd","tttttttttt","ftftf","ffffffffff","dttd","dfdfd","ttttttttttttttt","g","fdgdf","ttttttfgft","ggggg","tgtgt","gdg","fgfgf","ttdttgg","ffsff"];
+var sp=compositions[stats.selected-1];
+var to_spawn=sp.length;
 };
