@@ -639,6 +639,7 @@ function gameWin() {
 
 // Reset game to original state
 function reset() {
+    var stats = JSON.parse(localStorage.getItem('stats'));
     document.getElementById('game-over').style.display = 'none';
     document.getElementById('game-over-overlay').style.display = 'none';
     isGameOver = false;
