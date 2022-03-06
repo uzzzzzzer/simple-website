@@ -1,1 +1,1 @@
-$echo include('mypage.html');
+<?php include('mypage.html'); ?>
