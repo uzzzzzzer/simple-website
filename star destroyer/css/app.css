@@ -42,7 +42,7 @@ canvas {
     margin: auto;
     width: 100%;
     height: 100%;
-    background-image: url("\img\terrain.png");
+    background-image: url("..\star destroyer\img\terrain.png");
     position: absolute;
     top: 0;
     left: 0;
