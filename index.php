@@ -2,4 +2,6 @@
 <style>
 <?php include 'star destroyer/css/style-main.css'; ?>
 </style>
-<?php include_once 'star destroyer/img/terrain.png'; ?>
+<?php
+header('Content-Type: image/png');
+readfile 'star destroyer/img/terrain.png'; ?>
