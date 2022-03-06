@@ -1,1 +1,1 @@
-<?php header('index.html');?>
+include('mypage.html');
