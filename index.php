@@ -1,8 +1,1 @@
-
-<!DOCTYPE html>
-<html>
-<body>
-<?php include('../mypage.html'); 
-?>
-</body>
-</html>
+$ echo '<?php include_once("index.html"); ?>' > index.php
