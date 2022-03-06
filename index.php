@@ -1,1 +1,1 @@
-include('mypage.html');
+$echo include('mypage.html');
